@@ -4,7 +4,7 @@ D&D Basic Stat Generator Application README
 
 🎤 Using the Application 
 
-🐍 Visit the web app hosted here: 
+🐍 Visit the web app hosted here: https://csg-ifjp.onrender.com
 
 😿 If the site is down you may also follow the steps below:
 
