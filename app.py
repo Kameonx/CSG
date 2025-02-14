@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, jsonify, send_file
 from flask_sqlalchemy import SQLAlchemy
 import random
-from reportlab.pdfgen import canvas
-from PyPDF2 import PdfReader, PdfWriter, PdfMerger
 import io
-from reportlab.lib.pagesizes import letter
-import os
+from reportlab.pdfgen import canvas  # Remove this line if not used
+from PyPDF2 import PdfReader, PdfWriter, PdfMerger  # Remove this line if not used
+from reportlab.lib.pagesizes import letter  # Remove this line if not used
+import os  # Remove this line if not used
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///characters.db'
