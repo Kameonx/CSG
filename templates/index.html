@@ -222,25 +222,16 @@
                 alert('Notes are empty. Please add some notes before saving.');
                 return;
             }
-            fetch('/download-notes', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ content: content })
-            })
-            .then(response => response.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'character_notes.txt';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                window.URL.revokeObjectURL(url);
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-            });
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(content)
+                .then(() => {
+                    alert('Notes copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy notes: ', err);
+                    alert('Failed to copy notes to clipboard.');
+                });
         }
 
         function clearNotes() {
